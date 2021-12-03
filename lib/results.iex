@@ -1,0 +1,5 @@
+Code.compile_file("lib/input.ex")
+Code.compile_file("lib/part_01.ex")
+
+AOC2021.Part01.larger_count(AOC2021.Input.input01(), List.first(AOC2021.Input.input01()), 0)
+|> IO.inspect(label: "Part 01: ")
