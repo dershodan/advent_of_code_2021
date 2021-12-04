@@ -4,18 +4,22 @@ defmodule AOC2021.Part01 do
   end
 
   def span_list(input) do
-    {_, _, summed_list} = Enum.reduce(input, {0, 0, []}, fn val, acc ->
-      case acc do
-        {0, n_minus_1, []} ->
-          {n_minus_1, val, []}
-        {0, 0, []} ->
-          {0, val, []}
-        {n_minus_2, n_minus_1, spanned_sum_list} ->
-          sum = n_minus_1 + n_minus_2 + val
-          spanned_sum_list = [sum | spanned_sum_list]
-          {n_minus_1, val, spanned_sum_list}
-      end
-    end)
+    {_, _, summed_list} =
+      Enum.reduce(input, {0, 0, []}, fn val, acc ->
+        case acc do
+          {0, n_minus_1, []} ->
+            {n_minus_1, val, []}
+
+          {0, 0, []} ->
+            {0, val, []}
+
+          {n_minus_2, n_minus_1, spanned_sum_list} ->
+            sum = n_minus_1 + n_minus_2 + val
+            spanned_sum_list = [sum | spanned_sum_list]
+            {n_minus_1, val, spanned_sum_list}
+        end
+      end)
+
     Enum.reverse(summed_list)
   end
 

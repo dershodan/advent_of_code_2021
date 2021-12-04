@@ -1,8 +1,13 @@
 Code.compile_file("lib/input.ex")
 Code.compile_file("lib/part_01.ex")
+Code.compile_file("lib/part_02.ex")
 
 AOC2021.Part01.count_increasing_values(AOC2021.Input.input01())
 |> IO.inspect(label: "Part 01-01: ")
 
 AOC2021.Part01.count_increasing_values(AOC2021.Part01.span_list(AOC2021.Input.input01()))
-|> IO.inspect(label: "Part 01-01: ")
+|> IO.inspect(label: "Part 01-02: ")
+
+[x, y] = AOC2021.Part02.accumulate_inputs(AOC2021.Input.input02())
+x * y
+|> IO.inspect(label: "Part 02: ")
