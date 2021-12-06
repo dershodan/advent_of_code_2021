@@ -45,5 +45,10 @@ defmodule AOC2021Test do
       [x, y] = accumulate_inputs(test_data)
       assert x * y == 150
     end
+
+    test "accumulate using aim", %{test_data: test_data} do
+      [x, y] = accumulate_using_aim(test_data)
+      assert x * y == 900
+    end
   end
 end

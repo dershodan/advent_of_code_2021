@@ -24,3 +24,7 @@ advent_of_code_2021-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+venv/*
+
+lib/.idea/*

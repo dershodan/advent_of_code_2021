@@ -11,3 +11,7 @@ AOC2021.Part01.count_increasing_values(AOC2021.Part01.span_list(AOC2021.Input.in
 [x, y] = AOC2021.Part02.accumulate_inputs(AOC2021.Input.input02())
 x * y
 |> IO.inspect(label: "Part 02: ")
+
+[x, y] = AOC2021.Part02.accumulate_using_aim(AOC2021.Input.input02())
+x * y
+|> IO.inspect(label: "Part 02: ")

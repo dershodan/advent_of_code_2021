@@ -13,4 +13,22 @@ defmodule AOC2021.Part02 do
       end
     end)
   end
+
+  def accumulate_using_aim(input_list) do
+    %{x: x, y: y} =
+      Enum.reduce(input_list, %{x: 0, y: 0, aim: 0}, fn {move, amount}, %{x: x, y: y, aim: aim} ->
+        case move do
+          "forward" ->
+            %{x: x + amount, y: y + amount * aim, aim: aim}
+
+          "up" ->
+            %{x: x, y: y, aim: aim - amount}
+
+          "down" ->
+            %{x: x, y: y, aim: aim + amount}
+        end
+      end)
+
+    [x, y]
+  end
 end
